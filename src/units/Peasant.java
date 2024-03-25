@@ -8,8 +8,8 @@ public class Peasant extends Person {
 
     public Peasant(String name, int x, int y) {
         super(name, x, y);
-        spearNumber = 0;
-        arrowNumber = 0;
+        spearNumber = 2;
+        arrowNumber = 2;
         initiative = 0;
     }
 
@@ -45,5 +45,14 @@ public class Peasant extends Person {
             this.spearNumber = this.spearNumber - 1;
             ((Spearman) person).spearNumber += 1;
         }
+    }
+    public void statusOutput(){
+        System.out.println(this.getNamePerson() + " " + "Spears = " + this.spearNumber
+                + " Arrows = " + this.arrowNumber + " Health = " + this.health);
+    }
+
+    @Override
+    public String getInfo() {
+        return "Крестьянин";
     }
 }

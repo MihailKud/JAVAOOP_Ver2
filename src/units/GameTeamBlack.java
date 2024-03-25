@@ -1,8 +1,6 @@
 package units;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class GameTeamBlack {
     protected String teamName; // имя команды

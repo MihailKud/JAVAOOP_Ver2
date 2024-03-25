@@ -20,4 +20,13 @@ public class Monk extends Person{
             this.mana -= 1;
         }
     }
+    public void statusOutput(){
+        System.out.println(this.getNamePerson() + " " + "Mana = " + this.mana
+                + " Health = " + this.health);
+    }
+
+    @Override
+    public String getInfo() {
+        return "Монах";
+    }
 }

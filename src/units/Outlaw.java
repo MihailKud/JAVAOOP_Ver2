@@ -31,4 +31,12 @@ public class Outlaw extends Person{
             ((Sniper) person).arrowNumber -= 1;
         }
     }
+    public void statusOutput(){
+        System.out.println(this.getNamePerson() + " " + "Health = " + this.health);
+    }
+
+    @Override
+    public String getInfo() {
+        return "Разбойник";
+    }
 }

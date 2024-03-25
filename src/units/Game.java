@@ -4,6 +4,7 @@ public class Game {
 
     protected GameTeamWhite commandWhite;
     protected GameTeamBlack commandBlack;
+    protected Integer moveCounter = 0;
 
     public Game(String nameW, String nameB) {
         commandWhite = new GameTeamWhite(nameW);
@@ -23,7 +24,11 @@ public class Game {
                     this.commandBlack.teamPersons.get(i).step(this.commandWhite, this.commandBlack);
                 }
             }
-
         }
+        moveCounter++;
     }
+
+
+
+
 }

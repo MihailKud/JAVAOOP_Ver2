@@ -17,11 +17,14 @@ public abstract class Person implements GameInterface{
     }
     // метод чтения имени персонажа, возвращает имя и координаты (тип String)
     public String getNamePerson(){
-        return this.name + " " + this.position.x + " " + this.position.y;
+        return "Class " + this.getClass().getName() + " " + this.getInfo() + " " + "X= " +
+                this.position.x + " " + "Y= " + this.position.y;
     }
 
     @Override
     public String toString() {
         return getNamePerson();
     }
+
+
 }

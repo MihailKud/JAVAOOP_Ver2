@@ -60,5 +60,13 @@ public class Spearman extends Person{
         }
         return tempPerson;
     }
+    public void statusOutput(){
+        System.out.println(this.getNamePerson() + " " + "Spears = " + this.spearNumber
+                + " Health = " + this.health);
+    }
 
+    @Override
+    public String getInfo() {
+        return "Копейщик";
+    }
 }
