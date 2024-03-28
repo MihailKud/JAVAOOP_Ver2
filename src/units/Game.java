@@ -1,14 +1,20 @@
 package units;
 
+import java.util.ArrayList;
+
 public class Game {
 
     protected GameTeamWhite commandWhite;
     protected GameTeamBlack commandBlack;
     protected Integer moveCounter = 0;
 
+    protected ArrayList<Person> tempAllTeam = new ArrayList<Person>();
+
     public Game(String nameW, String nameB) {
         commandWhite = new GameTeamWhite(nameW);
         commandBlack = new GameTeamBlack(nameB);
+        tempAllTeam.addAll(commandWhite.teamPersons);
+        tempAllTeam.addAll(commandBlack.teamPersons);
     }
 
     // Метод, в котором все игроки двух команд делают поочередно по одному ходу.

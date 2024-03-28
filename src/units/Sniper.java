@@ -70,6 +70,6 @@ public class Sniper extends Person{
 
     @Override
     public String getInfo() {
-        return "Снайпер";
+        return "Sniper";
     }
 }

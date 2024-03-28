@@ -37,6 +37,6 @@ public class Outlaw extends Person{
 
     @Override
     public String getInfo() {
-        return "Разбойник";
+        return "Outlaw";
     }
 }

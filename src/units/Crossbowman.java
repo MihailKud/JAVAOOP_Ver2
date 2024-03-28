@@ -69,7 +69,7 @@ public class Crossbowman extends Person{
 
     @Override
     public String getInfo() {
-        return "Арбалетчик";
+        return "Crossbowman";
     }
 
 }

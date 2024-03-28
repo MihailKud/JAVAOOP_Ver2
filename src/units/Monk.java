@@ -27,6 +27,6 @@ public class Monk extends Person{
 
     @Override
     public String getInfo() {
-        return "Монах";
+        return "Monk";
     }
 }

@@ -1,6 +1,9 @@
 package units;
 
-//крестьянин, будет выполнять функцию производства оружия.
+import java.util.ArrayList;
+import java.util.Random;
+
+//крестьянин.
 public class Peasant extends Person {
     protected Integer spearNumber; // количество заготовленных копий для копейщика у крестьянина
     protected Integer arrowNumber; // количество заготовленных стрел для арбалета и снайпера
@@ -13,9 +16,24 @@ public class Peasant extends Person {
         initiative = 0;
     }
 
+    /**
+    * Передает стрелу случайно выбранному снайперу или арбалетчику
+    */
     @Override
     public void step(GameTeamWhite white, GameTeamBlack black) {
-
+        ArrayList<Person> arrPerson = new ArrayList<Person>();
+        if (white.teamPersons.contains(this)){
+            arrPerson.addAll(white.teamPersons);
+        } else{
+            arrPerson.addAll(black.teamPersons);
+        }
+        for (int i = 0; i < arrPerson.size(); i++) {
+            if (!((arrPerson.get(i) instanceof Crossbowman) || (arrPerson.get(i) instanceof Sniper))){
+                arrPerson.remove(arrPerson.get(i));
+                i--;
+            }
+        }
+        transferArrow(arrPerson.get(new Random().nextInt(0, arrPerson.size())));
     }
 
     // действие производство стрелы
@@ -31,12 +49,10 @@ public class Peasant extends Person {
     //действие передать стрелу арбалетчику или снайперу
     public void transferArrow(Person person) {
         if ((this.arrowNumber > 0) & (person instanceof Sniper)) {
-            this.arrowNumber = this.arrowNumber - 1;
-            ((Sniper) person).arrowNumber += 1;
+           ((Sniper) person).arrowNumber += 1;
         }
         if ((this.arrowNumber > 0) & (person instanceof Crossbowman)) {
-            this.arrowNumber = this.arrowNumber - 1;
-            ((Crossbowman) person).arrowNumber += 1;
+           ((Crossbowman) person).arrowNumber += 1;
         }
     }
     //действие передать копье копейщику
@@ -47,12 +63,11 @@ public class Peasant extends Person {
         }
     }
     public void statusOutput(){
-        System.out.println(this.getNamePerson() + " " + "Spears = " + this.spearNumber
-                + " Arrows = " + this.arrowNumber + " Health = " + this.health);
+        System.out.println(this.getNamePerson() + " " + "Health = " + this.health);
     }
 
     @Override
     public String getInfo() {
-        return "Крестьянин";
+        return "Peasant";
     }
 }

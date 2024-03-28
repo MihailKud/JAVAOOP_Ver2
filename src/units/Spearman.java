@@ -67,6 +67,6 @@ public class Spearman extends Person{
 
     @Override
     public String getInfo() {
-        return "Копейщик";
+        return "Spearman";
     }
 }
