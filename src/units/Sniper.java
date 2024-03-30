@@ -18,7 +18,7 @@ public class Sniper extends Person{
     // (противник находится в досягаемости по одному из восьми направлений удара) снайпер атакует этого
     // противника. Если же дистанция превосходит это значение, то осуществляется вычисление направления
     // ближайшего противника и перемещение на одну единицу (из четырех направлений) в его сторону.
-    // методы определения направления и перемещения установлены в классе LocationOfThePosition.
+    // Методы определения направления и перемещения установлены в классе LocationOfThePosition.
     public void step(GameTeamWhite white, GameTeamBlack black){
         if (this.aliveAndArrows()){
             if (this.position.distance(this.position, theClosestEnemy(white, black).position) < 1.5){
